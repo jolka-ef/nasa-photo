@@ -6,8 +6,9 @@ import { weekdaysNames } from "../utils/weekdaysNames.js";
 import { LeftArrow } from "../icons/LeftArrow.js";
 import { RightArrow } from "../icons/RightArrow.js";
 
+const today = new Date();
+
 export const Calendar = ({ setPhotoDate }) => {
-  const today = new Date();
   const [chosenMonth, setChosenMonth] = useState(null);
   const [isCurrentMonth, setIsCurrentMonth] = useState(true);
   const [isSelected, setIsSelected] = useState(null);
