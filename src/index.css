@@ -1,0 +1,181 @@
+:root {
+  --backgroundColor: #222535;
+  --textColor: #c3c1c1;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+aside {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+body {
+  background: var(--backgroundColor);
+  color: var(--textColor);
+  margin: 0 auto;
+  max-width: 60em;
+  padding: 1.5em;
+}
+caption {
+  font-size: 1.25em;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+dl dt {
+  font-weight: bolder;
+}
+dl dt,
+dd {
+  font-size: 1.25em;
+  line-height: 1.75;
+  margin: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+html {
+  font-family: "futura-pt", helvetica, san-serif;
+  font-size: 100%;
+  line-height: 1.5;
+}
+
+p {
+  font-size: 1.25em;
+  margin: 0;
+}
+
+svg {
+  fill: currentColor;
+  width: 1.5em;
+}
+time {
+  font-size: 2em;
+}
+
+.Calendar {
+  align-self: center;
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right-color: rgba(255, 255, 255, 0.5);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  color: white;
+  display: inline-block;
+  margin: 1em;
+  padding: 1em;
+  z-index: 1;
+}
+.Calendar::before {
+  content: "";
+  background: linear-gradient(#4883b3, #7c4e8a);
+  border-radius: 50%;
+  filter: blur(25px);
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  right: 5%;
+  bottom: 5%;
+  z-index: -1;
+}
+
+.Calendar-button {
+  background-color: transparent;
+  border: none;
+  color: currentColor;
+}
+
+.Calendar-button.IsDisabled {
+  visibility: hidden;
+}
+.Calendar-date {
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  padding: 5px;
+}
+
+.Calendar-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5em;
+}
+.Calendar-heading {
+  font-size: 1.25em;
+}
+
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #0fa,
+      0 0 80px #0fa, 0 0 90px #0fa, 0 0 100px #0fa, 0 0 150px #0fa;
+  }
+
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+
+.IsBlinking {
+  animation: flicker 1.5s infinite alternate;
+}
+
+.IsDisabled {
+  color: #0000008a;
+  cursor: not-allowed;
+}
+
+.IsSelected {
+  background-color: var(--backgroundColor);
+}
+
+.Message {
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+    0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+  font-size: 2em;
+  text-transform: full-width;
+  padding: 2em;
+}
+
+.Page-heading {
+  border-top: 5px solid var(--textColor);
+  border-bottom: 5px solid var(--textColor);
+  font-size: 2.5em;
+  padding: 1em 0;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.Page-WelcomeText {
+  flex: 1 0 0;
+}
+
+.Photo {
+  border: solid 0.2em currentColor;
+  max-width: 100%;
+}
+.Photo-title {
+  font-weight: bolder;
+  font-style: italic;
+}
