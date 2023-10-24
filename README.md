@@ -4,7 +4,6 @@
 
 - [Overview](#overview)
   - [Screenshot](#screenshot)
-  - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
 - [Author](#author)
@@ -15,10 +14,6 @@
 
 ![](./screenshot.png)
 
-### Links
-
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-
 ## My process
 
 ### Built with
@@ -28,3 +23,6 @@
 - Flexbox
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
+
+### Nasa API 
+Generate Nasa Api Key https://api.nasa.gov/ and set the REACT_APP_NASA_API_KEY value in your .env
