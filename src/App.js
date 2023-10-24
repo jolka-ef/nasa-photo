@@ -4,23 +4,24 @@ import { useDataAPI } from "./js/logic/fetchData.js";
 import { Calendar } from "./js/components/Calendar.js";
 import { PhotoOfADay } from "./js/components/PhotoOfADay.js";
 
-const KEY = "";
-const API_URL = `https://api.nasa.gov/planetary/apod?api_key=${KEY}`;
+const API_KEY = process.env.REACT_APP_NASA_API_KEY;
+const API_URL = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`;
 
 export const App = () => {
   const [photoDate, setPhotoDate] = useState(
     new Date().toISOString().slice(0, 10)
   );
+
   let [{ data, isLoading, isError }, doFetch] = useDataAPI("");
+
   useEffect(() => {
-    const run = async () => {
-      await doFetch(`${API_URL}&date=${photoDate}`);
-    };
-    run();
-  }, [photoDate]);
+    doFetch(`${API_URL}&date=${photoDate}`);
+  }, [photoDate, doFetch]);
+
   return (
     <>
       <h1 className="Page-heading">Astronomy Picture of the Day </h1>
+      <pre>{process.env.REACT_APP_NASA_API_KEY}</pre>
       <Calendar setPhotoDate={setPhotoDate} />
       {isLoading && <p className="Message  Message-isBlinking ">is loading</p>}
       {isError && (
