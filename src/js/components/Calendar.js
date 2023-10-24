@@ -83,7 +83,7 @@ export const Calendar = ({ setPhotoDate }) => {
           <thead>
             <tr>
               {weekdaysNames.map((day) => (
-                <th scope="col" abbr={day.name}>
+                <th scope="col" abbr={day.name} key={day.name}>
                   {day.abbreviation}
                 </th>
               ))}
@@ -116,7 +116,7 @@ export const Calendar = ({ setPhotoDate }) => {
                       {day}
                     </td>
                   ) : (
-                    <td className="disabled" tabIndex="-1"></td>
+                    <td key={index} className="disabled" tabIndex="-1"></td>
                   );
                 })}
               </tr>
